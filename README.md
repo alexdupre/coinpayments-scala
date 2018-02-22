@@ -4,7 +4,10 @@
 
 An asynchronous / non-blocking Scala library for the CoinPayments API.
 
-Currently there is full support for the Callback Addresses (IPN included) and partial support for Create Transaction API (no IPN).
+Supported functionalities:
+- Create Transaction
+- Callback Addresses
+- Instant Payment Notifications (currently limited to 'deposit' type)
 
 ## Artifacts
 
