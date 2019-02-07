@@ -4,7 +4,7 @@ organization := "com.alexdupre"
 
 version := "1.0.1"
 
-scalaVersion := "2.12.4"
+scalaVersion := "2.12.8"
 
 scalacOptions := List("-feature", "-unchecked", "-deprecation", "-explaintypes", "-encoding", "UTF8")
 
@@ -12,7 +12,7 @@ resolvers += Resolver.typesafeRepo("releases")
 
 libraryDependencies ++= List(
   "com.eed3si9n" %% "gigahorse-okhttp" % "0.3.1",
-  "com.typesafe.play" %% "play-json" % "2.6.8",
+  "com.typesafe.play" %% "play-json" % "2.7.1",
   "commons-codec" % "commons-codec" % "1.11",
   "org.slf4j" % "slf4j-api" % "1.7.25",
   "ch.qos.logback" % "logback-classic" % "1.2.3" % "test"
