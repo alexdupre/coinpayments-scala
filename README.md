@@ -16,6 +16,7 @@ The latest release of the library is compiled with Scala 2.12 and supports only 
 | Version | Artifact Id             | HTTP Provider   | Play-JSON | Scala       |
 | ------- | ----------------------- | --------------- | --------- | ----------- |
 | 1.0.1   | coinpayments            | Gigahorse 0.3.x | 2.6.x     | 2.12 Only   |
+| 1.1     | coinpayments            | Gigahorse 0.3.x | 2.7.x     | 2.12 Only   |
 
 If you're using SBT, add the following line to your build file:
 
