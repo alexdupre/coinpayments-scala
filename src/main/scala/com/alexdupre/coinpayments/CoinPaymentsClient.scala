@@ -61,11 +61,12 @@ class CoinPaymentsClient(pubKey: String, privKey: String, http: HttpClient)(impl
       logger.trace(s"Payload: ${new String(req.body.asInstanceOf[InMemoryBody].bytes, utf8)}")
     http.processFull(req).map { response =>
       logger.debug(s"Response Status: ${response.status}")
-      val js = try {
-        Json.parse(response.bodyAsString)
-      } catch {
-        case NonFatal(_) => throw CoinPaymentsProtocolException()
-      }
+      val js =
+        try {
+          Json.parse(response.bodyAsString)
+        } catch {
+          case NonFatal(_) => throw CoinPaymentsProtocolException()
+        }
       logger.trace(s"Response:\n${Json.prettyPrint(js)}")
       (js \ "error").validate[String] match {
         case JsSuccess(value, _) if value == "ok" => (js \ "result").as[T]
@@ -81,16 +82,18 @@ class CoinPaymentsClient(pubKey: String, privKey: String, http: HttpClient)(impl
     execute[Map[String, CoinInfo]](post("rates", params))
   }
 
-  override def createInvoice(amount: BigDecimal,
-                             currency: String,
-                             crypto: String,
-                             buyerEmail: Option[String],
-                             buyerName: Option[String],
-                             itemName: Option[String],
-                             itemNumber: Option[String],
-                             invoice: Option[String],
-                             custom: Option[String],
-                             ipnUrl: Option[String]): Future[Invoice] = {
+  override def createInvoice(
+      amount: BigDecimal,
+      currency: String,
+      crypto: String,
+      buyerEmail: Option[String],
+      buyerName: Option[String],
+      itemName: Option[String],
+      itemNumber: Option[String],
+      invoice: Option[String],
+      custom: Option[String],
+      ipnUrl: Option[String]
+  ): Future[Invoice] = {
     val params = Map(
       "amount"      -> Some(amount),
       "currency1"   -> Some(currency),

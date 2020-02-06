@@ -20,8 +20,8 @@ case class DepositNotification(
     amount: BigDecimal,
     amounti: BigInt,
     fee: Option[BigDecimal], // only sent when status >= 100
-    feei: Option[BigInt], // only sent when status >= 100
-    destTag: Option[String] // Ripple Destination Tag, Monero Payment ID, etc.
+    feei: Option[BigInt],    // only sent when status >= 100
+    destTag: Option[String]  // Ripple Destination Tag, Monero Payment ID, etc.
 ) extends IPN
 
 object IPN {

@@ -24,6 +24,6 @@ package object models {
           }
         }
         case _ => JsError("String value expected")
-    }
+      }
 
 }

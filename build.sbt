@@ -2,55 +2,31 @@ name := "coinpayments"
 
 organization := "com.alexdupre"
 
-version := "1.1"
+version := "1.2"
 
-scalaVersion := "2.12.8"
+crossScalaVersions := Seq("2.12.10", "2.13.1")
+
+scalaVersion := "2.13.1"
 
 scalacOptions := List("-feature", "-unchecked", "-deprecation", "-explaintypes", "-encoding", "UTF8")
 
 resolvers += Resolver.typesafeRepo("releases")
 
 libraryDependencies ++= List(
-  "com.eed3si9n" %% "gigahorse-okhttp" % "0.3.1",
-  "com.typesafe.play" %% "play-json" % "2.7.1",
+  "com.eed3si9n" %% "gigahorse-okhttp" % "0.5.0",
+  "com.typesafe.play" %% "play-json" % "2.8.1",
   "commons-codec" % "commons-codec" % "1.11",
-  "org.slf4j" % "slf4j-api" % "1.7.25",
+  "org.slf4j" % "slf4j-api" % "1.7.30",
   "ch.qos.logback" % "logback-classic" % "1.2.3" % "test"
 )
 
+publishTo := sonatypePublishToBundle.value
+
 publishMavenStyle := true
 
-publishTo := {
-  val nexus = "https://oss.sonatype.org/"
-  if (isSnapshot.value)
-    Some("snapshots" at nexus + "content/repositories/snapshots")
-  else
-    Some("releases" at nexus + "service/local/staging/deploy/maven2")
-}
+licenses := Seq("BSD-style" -> url("http://www.opensource.org/licenses/bsd-license.php"))
 
-pomIncludeRepository := { _ =>
-  false
-}
-
-pomExtra := (<url>https://github.com/alexdupre/coinpayments-scala</url>
-  <licenses>
-    <license>
-      <name>BSD-style</name>
-      <url>http://www.opensource.org/licenses/bsd-license.php</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-  <scm>
-    <url>git@github.com:alexdupre/coinpayments-scala.git</url>
-    <connection>scm:git:git@github.com:alexdupre/coinpayments-scala.git</connection>
-  </scm>
-  <developers>
-    <developer>
-      <id>alexdupre</id>
-      <name>Alex Dupre</name>
-      <url>http://www.alexdupre.com</url>
-    </developer>
-  </developers>)
+sonatypeProjectHosting := Some(xerial.sbt.Sonatype.GitHubHosting("alexdupre", "coinpayments-scala", "Alex Dupre", "ale@FreeBSD.org"))
 
 buildInfoKeys := Seq[BuildInfoKey](version)
 
