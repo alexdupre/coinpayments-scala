@@ -1,5 +1,7 @@
 package com.alexdupre.coinpayments.models
 
+import play.api.libs.json.Reads
+
 object Capability extends Enumeration {
   type Capability = Value
 
@@ -9,6 +11,6 @@ object Capability extends Enumeration {
   val Wallet         = Value("wallet")
   val Convert        = Value("convert")
 
-  implicit val read = enumReads(Capability)
+  implicit val read: Reads[Capability.Value] = enumReads(Capability)
 
 }

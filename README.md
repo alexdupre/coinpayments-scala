@@ -13,11 +13,12 @@ Supported functionalities:
 
 The latest release of the library is compiled with Scala 2.12 and supports only Gigahorse with OkHttp backend as HTTP provider.
 
-| Version | Artifact Id             | HTTP Provider   | Play-JSON | Scala       |
-| ------- | ----------------------- | --------------- | --------- | ----------- |
-| 1.0.1   | coinpayments            | Gigahorse 0.3.x | 2.6.x     | 2.12 Only   |
-| 1.1     | coinpayments            | Gigahorse 0.3.x | 2.7.x     | 2.12 Only   |
-| 1.2     | coinpayments            | Gigahorse 0.5.x | 2.8.x     | 2.12 & 2.13 |
+| Version | Artifact Id             | HTTP Provider   | Play-JSON | Scala           |
+|---------| ----------------------- |-----------------|-----------|-----------------|
+| 1.0.1   | coinpayments            | Gigahorse 0.3.x | 2.6.x     | 2.12 Only       |
+| 1.1     | coinpayments            | Gigahorse 0.3.x | 2.7.x     | 2.12 Only       |
+| 1.2     | coinpayments            | Gigahorse 0.5.x | 2.8.x     | 2.12 & 2.13     |
+| 1.3     | coinpayments            | Gigahorse 0.7.x | 2.10.x    | 2.12 & 2.13 & 3 |
 
 If you're using SBT, add the following line to your build file:
 
