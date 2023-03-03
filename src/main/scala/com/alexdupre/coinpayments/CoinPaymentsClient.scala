@@ -25,8 +25,8 @@ class CoinPaymentsClient(pubKey: String, privKey: String, http: HttpClient)(impl
       import java.net.URLEncoder
       def toByteArray(formData: TreeMap[String, String]): Array[Byte] =
         formData
-          .map {
-            case (k, v) => k + "=" + URLEncoder.encode(v, "UTF-8")
+          .map { case (k, v) =>
+            k + "=" + URLEncoder.encode(v, "UTF-8")
           }
           .mkString("&")
           .getBytes(utf8)

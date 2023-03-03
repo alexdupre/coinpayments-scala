@@ -15,9 +15,9 @@ resolvers += Resolver.typesafeRepo("releases")
 libraryDependencies ++= List(
   "com.eed3si9n" %% "gigahorse-okhttp" % "0.7.0",
   "com.typesafe.play" %% "play-json" % "2.10.0-RC7",
-  "commons-codec" % "commons-codec" % "1.11",
-  "org.slf4j" % "slf4j-api" % "1.7.30",
-  "ch.qos.logback" % "logback-classic" % "1.2.3" % "test"
+  "commons-codec" % "commons-codec" % "1.15",
+  "org.slf4j" % "slf4j-api" % "2.0.6",
+  "ch.qos.logback" % "logback-classic" % "1.3.5" % "test"
 )
 
 publishTo := sonatypePublishToBundle.value
