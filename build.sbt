@@ -2,19 +2,19 @@ name := "coinpayments"
 
 organization := "com.alexdupre"
 
-version := "1.2"
+version := "1.3"
 
-crossScalaVersions := Seq("2.12.10", "2.13.1")
+scalaVersion := "2.13.10"
 
-scalaVersion := "2.13.1"
+crossScalaVersions := Seq("2.12.10", scalaVersion.value, "3.2.2")
 
 scalacOptions := List("-feature", "-unchecked", "-deprecation", "-explaintypes", "-encoding", "UTF8")
 
 resolvers += Resolver.typesafeRepo("releases")
 
 libraryDependencies ++= List(
-  "com.eed3si9n" %% "gigahorse-okhttp" % "0.5.0",
-  "com.typesafe.play" %% "play-json" % "2.8.1",
+  "com.eed3si9n" %% "gigahorse-okhttp" % "0.7.0",
+  "com.typesafe.play" %% "play-json" % "2.10.0-RC7",
   "commons-codec" % "commons-codec" % "1.11",
   "org.slf4j" % "slf4j-api" % "1.7.30",
   "ch.qos.logback" % "logback-classic" % "1.2.3" % "test"
