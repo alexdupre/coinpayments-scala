@@ -2,11 +2,11 @@ name := "coinpayments"
 
 organization := "com.alexdupre"
 
-version := "1.3"
+version := "2.0.0"
 
-scalaVersion := "2.13.10"
+scalaVersion := "2.13.12"
 
-crossScalaVersions := Seq("2.12.10", scalaVersion.value, "3.2.2")
+crossScalaVersions := Seq(scalaVersion.value, "3.3.1")
 
 scalacOptions := List("-feature", "-unchecked", "-deprecation", "-explaintypes", "-encoding", "UTF8")
 
@@ -14,10 +14,10 @@ resolvers += Resolver.typesafeRepo("releases")
 
 libraryDependencies ++= List(
   "com.eed3si9n" %% "gigahorse-okhttp" % "0.7.0",
-  "com.typesafe.play" %% "play-json" % "2.10.0-RC7",
+  "org.playframework" %% "play-json" % "3.0.1",
   "commons-codec" % "commons-codec" % "1.15",
   "org.slf4j" % "slf4j-api" % "2.0.6",
-  "ch.qos.logback" % "logback-classic" % "1.3.5" % "test"
+  "ch.qos.logback" % "logback-classic" % "1.4.7" % Test
 )
 
 publishTo := sonatypePublishToBundle.value
